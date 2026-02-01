@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShinyDex</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
+
+</head>
+
+<body>
+
+    <header>
+        <h1>ShinyDex</h1>
+        <div id="counters">
+            <span id="count-total">📦 0</span>
+            <span id="count-shiny">✨ 0</span>
+            <span id="count-wishlist">⭐ 0</span>
+            <input type="search"
+                   id="search-name"
+                   placeholder="Buscar Pokémon..."
+                   autocomplete="off" />
+
+        </div>
+
+    </header>
+
+    <main id="pokedex">
+        <div id="pokemon-grid"></div>
+        <button id="load-more">Cargar más</button>
+        <div id="scroll-sentinel"></div>
+
+    </main>
+
+    <nav class="bottom-bar">
+        <button id="toggle-wishlist">⭐</button>
+        <button id="toggle-shiny">✨</button>
+        <button>🔍</button>
+        <button>⚙️</button>
+    </nav>
+
+    <!-- MENÚ RÁPIDO -->
+    <div id="quick-menu" class="hidden">
+        <div class="sheet">
+            <h3 id="menu-title">Pokémon</h3>
+
+            <button id="btn-wishlist">⭐ Wishlist</button>
+            <button id="btn-shiny">✨ Shiny conseguido</button>
+
+            <select id="select-game">
+                <option value="">🎮 Sin juego</option>
+                <option>Scarlet</option>
+                <option>Violet</option>
+                <option>Legends: Arceus</option>
+                <option>Sword / Shield</option>
+                <option>HOME</option>
+            </select>
+
+            <button id="btn-close">Cerrar</button>
+        </div>
+    </div>
+    <!-- FILTROS -->
+    <div id="filter-menu" class="hidden">
+        <div class="sheet">
+            <h3>Filtros</h3>
+
+            <label>
+                🎮 Juego
+                <select id="filter-game">
+                    <option value="">Todos</option>
+                    <option>Scarlet</option>
+                    <option>Violet</option>
+                    <option>Legends: Arceus</option>
+                    <option>Sword / Shield</option>
+                    <option>HOME</option>
+                    <option>Otro</option>
+                </select>
+            </label>
+
+            <label>
+                ✨ Shiny conseguido
+                <input type="checkbox" id="filter-shiny" />
+            </label>
+
+            <button id="filter-close">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- FICHA -->
+    <div id="detail-view" class="hidden">
+        <div class="sheet">
+            <button id="detail-close">Cerrar</button>
+
+            <h2 id="detail-title"></h2>
+
+            <img id="detail-img" src="" alt="" />
+
+            <div id="detail-types"></div>
+            <div id="detail-stats"></div>
+
+            <label>
+                ✨ Shiny conseguido
+                <input type="checkbox" id="detail-shiny" />
+            </label>
+
+            <label>
+                ⭐ Wishlist
+                <input type="checkbox" id="detail-wishlist" />
+            </label>
+
+            <label>
+                🎮 Juego
+                <select id="detail-game">
+                    <option value="">Sin juego</option>
+                    <option>Scarlet</option>
+                    <option>Violet</option>
+                    <option>Legends: Arceus</option>
+                    <option>Sword / Shield</option>
+                    <option>HOME</option>
+                    <option>Otro</option>
+                </select>
+            </label>
+
+            <label>
+                📝 Nota
+                <textarea id="detail-note" rows="3"></textarea>
+            </label>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+        }
+    </script>
+
+</body>
+</html>
