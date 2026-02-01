@@ -13,7 +13,11 @@ header {
     padding: 10px;
     background: white;
     border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
+
 
 #pokedex {
     padding: 10px;
@@ -60,6 +64,14 @@ header {
     right: 4px;
     font-size: 16px;
 }
+.shiny-mark {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-size: 16px;
+  pointer-events: none;
+}
+
 #quick-menu {
     position: fixed;
     inset: 0;
@@ -222,4 +234,22 @@ header {
 }
 #scroll-sentinel {
     height: 1px;
+}
+#detail-img,
+.pokemon img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+.sprite-frame {
+  background: #f0f0f0;
+  border-radius: 16px;
+  padding: 12px;
+  margin: 12px auto;
+  width: fit-content;
+}
+
+#detail-img {
+  image-rendering: pixelated;
+  display: block;
 }

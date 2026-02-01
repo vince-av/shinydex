@@ -387,6 +387,20 @@ detailView.addEventListener("mousedown", (e) => {
     }
 });
 
+detailShiny.addEventListener("change", () => {
+  if (!pokemonActivo) return;
+
+  pokemonActivo.shinyConseguido = detailShiny.checked;
+
+  // Cambiar sprite al instante
+  detailImg.src = detailShiny.checked
+    ? pokemonActivo.shiny
+    : pokemonActivo.normal;
+
+  actualizarCarta(pokemonActivo);
+  guardarDatos();
+  actualizarContadores();
+});
 
 
 
