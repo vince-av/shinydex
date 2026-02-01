@@ -1,4 +1,4 @@
-const CACHE_NAME = "shinydex-v3.1";
+const CACHE_NAME = "shinydex-v4";
 const FILES_TO_CACHE = [
     "./",
     "./index.html",
@@ -20,3 +20,4 @@ self.addEventListener("fetch", event => {
         })
     );
 });
+
