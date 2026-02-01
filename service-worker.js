@@ -1,4 +1,4 @@
-const CACHE_NAME = "shinydex-v2";
+const CACHE_NAME = "shinydex-v3";
 const FILES_TO_CACHE = [
     "./",
     "./index.html",
